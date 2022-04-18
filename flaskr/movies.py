@@ -6,4 +6,7 @@ bp = Blueprint('movies', __name__, url_prefix='/movies')
 @bp.route('/', methods=['GET'])
 def movie_list():
     movies = get_movies()
-    return render_template('movies.html', movies=movies)
+    hasHomepage = False
+    if movies[0]['homepage'] != '':
+        hasHomepage = True
+    return render_template('movies.html', movies=movies, homepage=hasHomepage)

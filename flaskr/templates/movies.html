@@ -1,2 +1,11 @@
 <title>Movie Collection</title>
-<h1>{{ movies[0] }}!</h1>
+<h1>Title: {{ movies[0]['title'] }}</h1>
+<h2>Movie ID: {{ movies[0]['id']}}</h2>
+
+{% if homepage %}
+    <h2>Homepage: <a href="{{movies[0]['homepage']}}" target="_blank">{{ movies[0]['homepage']}}</a></h2>
+{% endif %}
+
+    <h2>Tagline: {{movies[0]['overview']}}</h2>
+    <h2>Release Date: {{movies[0]['release_date']}}</h2>
+    <h2>Runtime: {{movies[0]['runtime']}} minutes</h2>
